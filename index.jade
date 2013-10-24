@@ -2,82 +2,101 @@ extends layout
 
 block slides
   section.slide#title
-    h1 Deck.js Starter
-      .subtitle An opinionated starting point for deck.js presentation goodness
+    h3 Reno Reckling | 28.10.2013
+    h1 Szenenerkennung mittels hierarchischer Implicit Shape Models
+      .subtitle basierend auf räumlichen Objektrelationen für das Programmieren durch Vormachen
+      div(style="background: url('images/training-data.png') no-repeat 0px -100px; height: 300px; margin-left: 100px; background-size: 1024px 500px;")
 
-  section.slide#introduction
+  section.slide#Motivation
+    h2 Warum Szenenerkennung?
+    div(style="position: absolute; width: 100%; height: 80%;")
+      img(src="images/motivation1.png", style="position: absolute; top: 0px; left: 0px; height: 100%;")
+      ul(style="margin-left: 55%;")
+        li.slide Objekterkennung liefert
+          img(src="images/motivation2.png", style="position: absolute; top: 0px; left: 0px; height: 100%;")
+          ul
+            li(style="list-style-type: none;") "Welche Objekte sehe ich?"
+        li.slide Szenenerkennung liefert
+          img(src="images/motivation3.png", style="position: absolute; top: 0px; left: 0px; height: 100%;")
+          ul
+            li(style="list-style-type: none;") "Welche Beziehung haben die Objekte zueinander?"
+
+
+
+  section.slide#Aufgaben
+    h2 Aufgabenstellung
+    ul
+      li Erweiterung des Implicit-Shape-Model-Ansatzes auf 6D
+      li Beobachtung einer Szene über mehrere Minuten bis Stunden
+      li Generieren eines Modells zur Beschreibung von
+        ul
+          li Lage und Orientierung von Objekten zueinander
+            p "Messer liegt immer rechts von Teller."
+          li Unterszenen auf Basis von Heuristiken
+          li Lage und Orietierung von Unterszenen zueinander
+            p "Messer und Teller liegen immer vor der Tasse."
+
+  section.slide#Einschrankungen
+    h2 Einschränkungen
+    div Kein ...
+      ul
+        li online Training
+        li automatisches Erlernen von neuen Zusammenhangstypen
+        li selbstständige extraktion von Szenen aus den Trainingsdaten
+
+  section.slide#Konzept
     :markdown
-      ## Deck.js Starter
+      ## Konzept
+      #### Implicit Shape Model
+    img(src="images/leibe-car.jpg", height="100%", width="100%")
 
-      This is my custom set of tweaks / additions to deck for faster and
-      easier authorship, including:
-
-      * **[CodeMirror][cm]**: Live JavaScript code sample execution.
-      * **[CoffeeScript][cs]**: Support for CoffeeScript code execution.
-      * **[Jade Templates][jade]**: Can optionally build using Jade
-        (with Markdown) support.
-
-      [deckjs]: https://github.com/imakewebthings/deck.js
-      [jade]: http://jade-lang.com
-      [cm]: https://github.com/iros/deck.js-codemirror
-      [cs]: http://coffeescript.org/
-
-  section.slide#js
+  section.slide#Train
     :markdown
-      ## JavaScript Example
+      ## Konzept
+      #### Training
+    img(src="images/training.svg", height="500px")
 
-      You can edit and run the following code sample from your browser:
-
-    textarea.code#code(name="code", mode="javascript", runnable="true", style="display: none;").
-      var toCamel = function (str) {
-        return str.replace(/(\_[a-z])/g, function (val) {
-          return val.toUpperCase().replace('_', '');
-        });
-      };
-
-      console.log(toCamel("my_cased_variable"));
-    //-
-
-  section.slide#cs
+  section.slide#Beobacht
     :markdown
-      ## CoffeeScript Example
+      ## Konzept
+      #### Training - Beobachtungen
+    div.col2
+      object(type="image/svg+xml", data="images/beobachtung.svg", height="300")
+      object.beob-svg(type="image/svg+xml", data="images/training.svg", height="300")
 
-      You can even run CoffeeScript code samples!
-
-    textarea.code#code(name="code", mode="coffeescript", runnable="true", style="display: none;").
-      toCamel = (str) ->
-        str.replace /(\_[a-z])/g, (val) ->
-          val.toUpperCase().replace '_', ''
-
-      console.log toCamel "my_cased_variable"
-    //-
-
-  section.slide#jade
+  section.slide#Spur
     :markdown
-      ## Jade Templates
+      ## Konzept
+      #### Training - Spuren
+    div.col2
+      object(type="image/svg+xml", data="images/spuren.svg", height="300")
+      object.spur-svg(type="image/svg+xml", data="images/training.svg", height="300")
 
-      Starter slides can use Jade templates and filters.
-
-    pre.
-      section.slide#my-slide
-        :markdown
-          ## Markdown Header
-
-          You can write markdown paragraphs
-          using the `:markdown` filter.
-
-        p Or, any valid Jade too...
-
-
-  section.slide#next
+  section.slide#Subs
     :markdown
-      ## Get Started!
+      ## Konzept
+      #### Training - Unterszenenfindung
+    div.col2
+      object(type="image/svg+xml", data="images/unterszene.svg", height="300")
+      object.sub-svg(type="image/svg+xml", data="images/training.svg", height="300")
 
-      * Check out the [demo](http://ryan-roemer.github.com/deck.js-starter)
-      * [Fork](https://github.com/ryan-roemer/deck.js-starter) or
-        [download](https://ryan-roemer.github.com/deck.js-starter/archive/master.tar.gz)
-        the source from GitHub
-      * Edit "index.jade" and add your slides.
-      * Customize "layout.jade" with additional CSS, scripts, themes or Deck.js
-        plugins.
-      * ... and publish!
+  section.slide#Ref
+    :markdown
+      ## Konzept
+      #### Training - Referenzobjektwahl
+    div.col2
+      object(type="image/svg+xml", data="images/referenzwahl.svg", height="300")
+      object.ref-svg(type="image/svg+xml", data="images/training.svg", height="300")
+
+  section.slide#ISM
+    :markdown
+      ## Konzept
+      #### Training - ISM-Generierung
+    div.col2
+      object(type="image/svg+xml", data="images/ism.svg", height="300")
+      object.ism-svg(type="image/svg+xml", data="images/training.svg", height="300")
+
+  section.slide#Reco
+    :markdown
+      ## Konzept
+      #### Erkennung

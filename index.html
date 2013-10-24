@@ -14,9 +14,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Deck.js Starter</title>
+    <title>Bachelorvortrag</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=1024, user-scalable=no">
+    <meta name="viewport" content="width=1024, height=768, user-scalable=no">
     <!-- Required stylesheets-->
     <link rel="stylesheet" href="core/deck.core.css">
     <!-- Starter kit custom styles.-->
@@ -30,72 +30,123 @@
     <link rel="stylesheet" href="extensions/scale/deck.scale.css">
     <!-- Style theme. More available in /themes/style/ or create your own.-->
     <!-- Transition. More available in /themes/transition/ or create your own.-->
-    <link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+    <link rel="stylesheet" href="themes/transition/fade.css">
     <!-- Plugin: CodeMirror-->
     <link rel="stylesheet" href="plugins/codemirror/deck.codemirror.css">
     <link rel="stylesheet" href="plugins/codemirror/themes/elegant.css">
+    <link rel="stylesheet" href="style.css">
     <!-- Modernizr.-->
     <script src="js/vendor/modernizr.custom.js"></script>
   </head>
   <body>
+    <!-- Required JS files.-->
+    <script src="js/vendor/jquery-1.8.2.min.js"></script>
+    <script src="js/vendor/coffee-script-1.4.0.min.js"></script>
+    <script src="core/deck.core.js"></script>
     <div class="deck-container">
       <section id="title" class="slide">
-        <h1>Deck.js Starter
-          <div class="subtitle">An opinionated starting point for deck.js presentation goodness</div>
+        <h3>Reno Reckling | 28.10.2013</h3>
+        <h1>Szenenerkennung mittels hierarchischer Implicit Shape Models
+          <div class="subtitle">basierend auf räumlichen Objektrelationen für das Programmieren durch Vormachen</div>
+          <div style="background: url('images/training-data.png') no-repeat 0px -100px; height: 300px; margin-left: 100px; background-size: 1024px 500px;"></div>
         </h1>
       </section>
-      <section id="introduction" class="slide"><h2>Deck.js Starter</h2>
-
-<p>This is my custom set of tweaks / additions to deck for faster and
-easier authorship, including:</p>
-
-<ul><li><strong><a href="https://github.com/iros/deck.js-codemirror">CodeMirror</a></strong>: Live JavaScript code sample execution.</li><li><strong><a href="http://coffeescript.org/">CoffeeScript</a></strong>: Support for CoffeeScript code execution.</li><li><strong><a href="http://jade-lang.com">Jade Templates</a></strong>: Can optionally build using Jade
-(with Markdown) support.</li></ul>
+      <section id="Motivation" class="slide">
+        <h2>Warum Szenenerkennung?</h2>
+        <div style="position: absolute; width: 100%; height: 80%;"><img src="images/motivation1.png" style="position: absolute; top: 0px; left: 0px; height: 100%;">
+          <ul style="margin-left: 55%;">
+            <li class="slide">Objekterkennung liefert<img src="images/motivation2.png" style="position: absolute; top: 0px; left: 0px; height: 100%;">
+              <ul>
+                <li style="list-style-type: none;">"Welche Objekte sehe ich?"</li>
+              </ul>
+            </li>
+            <li class="slide">Szenenerkennung liefert<img src="images/motivation3.png" style="position: absolute; top: 0px; left: 0px; height: 100%;">
+              <ul>
+                <li style="list-style-type: none;">"Welche Beziehung haben die Objekte zueinander?"</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </section>
-      <section id="js" class="slide"><h2>JavaScript Example</h2>
-
-<p>You can edit and run the following code sample from your browser:</p>
-        <textarea id="code" name="code" mode="javascript" runnable="true" style="display: none;" class="code">
-          var toCamel = function (str) {
-            return str.replace(/(\_[a-z])/g, function (val) {
-              return val.toUpperCase().replace('_', '');
-            });
-          };
-          
-          console.log(toCamel("my_cased_variable"));
-        </textarea>
+      <section id="Aufgaben" class="slide">
+        <h2>Aufgabenstellung</h2>
+        <ul>
+          <li>Erweiterung des Implicit-Shape-Model-Ansatzes auf 6D</li>
+          <li>Beobachtung einer Szene über mehrere Minuten bis Stunden</li>
+          <li>Generieren eines Modells zur Beschreibung von
+            <ul>
+              <li>Lage und Orientierung von Objekten zueinander
+                <p>"Messer liegt immer rechts von Teller."</p>
+              </li>
+              <li>Unterszenen auf Basis von Heuristiken</li>
+              <li>Lage und Orietierung von Unterszenen zueinander
+                <p>"Messer und Teller liegen immer vor der Tasse."</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </section>
-      <section id="cs" class="slide"><h2>CoffeeScript Example</h2>
-
-<p>You can even run CoffeeScript code samples!</p>
-        <textarea id="code" name="code" mode="coffeescript" runnable="true" style="display: none;" class="code">
-          toCamel = (str) ->
-            str.replace /(\_[a-z])/g, (val) ->
-              val.toUpperCase().replace '_', ''
-              
-          console.log toCamel "my_cased_variable"
-        </textarea>
+      <section id="Einschrankungen" class="slide">
+        <h2>Einschränkungen</h2>
+        <div>Kein ...
+          <ul>
+            <li>online Training</li>
+            <li>automatisches Erlernen von neuen Zusammenhangstypen</li>
+            <li>selbstständige extraktion von Szenen aus den Trainingsdaten</li>
+          </ul>
+        </div>
       </section>
-      <section id="jade" class="slide"><h2>Jade Templates</h2>
+      <section id="Konzept" class="slide"><h2>Konzept</h2>
 
-<p>Starter slides can use Jade templates and filters.</p>
-        <pre>section.slide#my-slide
-  :markdown
-    ## Markdown Header
-    
-    You can write markdown paragraphs
-    using the `:markdown` filter.
-    
-  p Or, any valid Jade too...
-  
-  </pre>
+<h4>Implicit Shape Model</h4><img src="images/leibe-car.jpg" height="100%" width="100%">
       </section>
-      <section id="next" class="slide"><h2>Get Started!</h2>
+      <section id="Train" class="slide"><h2>Konzept</h2>
 
-<ul><li>Check out the <a href="http://ryan-roemer.github.com/deck.js-starter">demo</a></li><li><a href="https://github.com/ryan-roemer/deck.js-starter">Fork</a> or
-<a href="https://ryan-roemer.github.com/deck.js-starter/archive/master.tar.gz">download</a>
-the source from GitHub</li><li>Edit &quot;index.jade&quot; and add your slides.</li><li>Customize &quot;layout.jade&quot; with additional CSS, scripts, themes or Deck.js
-plugins.</li><li>... and publish!</li></ul>
+<h4>Training</h4><img src="images/training.svg" height="500px">
+      </section>
+      <section id="Beobacht" class="slide"><h2>Konzept</h2>
+
+<h4>Training - Beobachtungen</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/beobachtung.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/training.svg" height="300" class="beob-svg"></object>
+        </div>
+      </section>
+      <section id="Spur" class="slide"><h2>Konzept</h2>
+
+<h4>Training - Spuren</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/spuren.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/training.svg" height="300" class="spur-svg"></object>
+        </div>
+      </section>
+      <section id="Subs" class="slide"><h2>Konzept</h2>
+
+<h4>Training - Unterszenenfindung</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/unterszene.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/training.svg" height="300" class="sub-svg"></object>
+        </div>
+      </section>
+      <section id="Ref" class="slide"><h2>Konzept</h2>
+
+<h4>Training - Referenzobjektwahl</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/referenzwahl.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/training.svg" height="300" class="ref-svg"></object>
+        </div>
+      </section>
+      <section id="ISM" class="slide"><h2>Konzept</h2>
+
+<h4>Training - ISM-Generierung</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/ism.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/training.svg" height="300" class="ism-svg"></object>
+        </div>
+      </section>
+      <section id="Reco" class="slide"><h2>Konzept</h2>
+
+<h4>Erkennung</h4>
       </section>
       <!-- deck.navigation snippet--><a href="#" title="Previous" class="deck-prev-link">&#8592;</a><a href="#" title="Next" class="deck-next-link">&#8594;</a>
       <!-- deck.status snippet-->
@@ -109,10 +160,6 @@ plugins.</li><li>... and publish!</li></ul>
       </form>
       <!--deck.hash snippet--><a href="." title="Permalink to this slide" class="deck-permalink">#</a>
     </div>
-    <!-- Required JS files.-->
-    <script src="js/vendor/jquery-1.8.2.min.js"></script>
-    <script src="js/vendor/coffee-script-1.4.0.min.js"></script>
-    <script src="core/deck.core.js"></script>
     <!-- Plugin: CodeMirror (with CoffeeScript enhancements).-->
     <script src="plugins/codemirror/codemirror.js"></script>
     <script src="plugins/codemirror/mode/javascript/javascript.js"></script>
@@ -145,7 +192,6 @@ plugins.</li><li>... and publish!</li></ul>
               .trim());
           }
         });
-        
         // Start deck.
         $.deck('.slide', {
           codemirror: {
@@ -155,6 +201,32 @@ plugins.</li><li>... and publish!</li></ul>
             indentWithTabs: false,
             runnable: false
           }
+        });
+        
+        $(".beob-svg")[0].addEventListener("load", function() {
+          var d = $(".beob-svg")[0].contentDocument;
+          var r = d.documentElement;
+          $("#svg-beobachtung", r).css("fill", "82bfff");
+        });
+        $(".spur-svg")[0].addEventListener("load", function() {
+          var d = $(".spur-svg")[0].contentDocument;
+          var r = d.documentElement;
+          $("#svg-spuren", r).css("fill", "82bfff");
+        });
+        $(".sub-svg")[0].addEventListener("load", function() {
+          var d = $(".sub-svg")[0].contentDocument;
+          var r = d.documentElement;
+          $("#svg-unterszenen", r).css("fill", "82bfff");
+        });
+        $(".ref-svg")[0].addEventListener("load", function() {
+          var d = $(".ref-svg")[0].contentDocument;
+          var r = d.documentElement;
+          $("#svg-referenz", r).css("fill", "82bfff");
+        });
+        $(".ism-svg")[0].addEventListener("load", function() {
+          var d = $(".ism-svg")[0].contentDocument;
+          var r = d.documentElement;
+          $("#svg-ism", r).css("fill", "82bfff");
         });
       });
     </script>

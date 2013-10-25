@@ -137,11 +137,13 @@ html.no-js(lang='en')
         function fillNodeByClass(cname, nodeid) {
           var ns = $(cname);
           function reg(n) {
-            n.addEventListener("load", function() {
+            setTimeout(function() {
               var d = n.contentDocument;
               var r = d.documentElement;
-              $(nodeid, r).css("fill", "82bfff");
-            });
+              console.log(r, $(nodeid, r));
+              $(nodeid, r).css("fill", "#82bfff");
+              console.log($(nodeid, r).css("fill"));
+            }, 5000);
           };
           for (var i = 0; i < ns.length; i++) {
             reg(ns[i]);
@@ -161,4 +163,5 @@ html.no-js(lang='en')
         fillings.forEach(function(f) {
           fillNodeByClass(f[0], f[1]);
         });
+        $.deck('enableScale');
       });

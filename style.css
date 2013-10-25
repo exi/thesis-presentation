@@ -1,6 +1,16 @@
 .col2 {
     -webkit-column-count: 2;
-    -webkit-column-gap: 50%;
+    -webkit-column-gap: 10px;
+    -moz-column-count: 2;
+    -moz-column-gap: 10px;
     column-count: 2;
-    column-gap: 50%;
+    column-gap: 10px;
+}
+
+.left-svg {
+    width: 100%;
+}
+
+.right-svg {
+    height: 500px;
 }

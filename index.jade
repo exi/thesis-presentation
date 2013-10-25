@@ -9,22 +9,21 @@ block slides
 
   section.slide#Motivation
     h2 Motivation
-    div(style="position: absolute; width: 100%; height: 80%;")
-      img(src="images/motivation1.png", style="position: absolute; top: 0px; left: 0px; height: 100%;")
-      ul(style="margin-left: 55%;")
+    div(style="position: relative; padding-right: 48px; width: 100%; height: 80%;")
+      img(src="images/motivation1.png", style="position: absolute; top: 0px; left: 0px; width: 45%;")
+      ul(style="margin-left: 50%;")
         li.slide Objekterkennung liefert
-          img(src="images/motivation2.png", style="position: absolute; top: 0px; left: 0px; height: 100%;")
+          img(src="images/motivation2.png", style="position: absolute; top: 0px; left: 0px; width: 45%;")
           ul
             li(style="list-style-type: none;") "Welche Objekte sehe ich?"
         li.slide Szenenerkennung liefert
-          img(src="images/motivation3.png", style="position: absolute; top: 0px; left: 0px; height: 100%;")
+          img(src="images/motivation3.png", style="position: absolute; top: 0px; left: 0px; width: 45%;")
           ul
             li(style="list-style-type: none;") "Welche Beziehung haben die Objekte zueinander?"
           ul.slide
             li Einschränkung des möglichen Handlungsraumes
             li Hilfe bei der Extraktion semantischer Zusammenhängen
             li Unterstützung bei der Objektfindung
-
 
   section.slide#Aufgaben
     h2 Aufgabenstellung
@@ -64,40 +63,40 @@ block slides
       ## Konzept
       #### Training - Beobachtungen
     div.col2
-      object(type="image/svg+xml", data="images/beobachtung.svg", height="300")
-      object.beob-svg(type="image/svg+xml", data="images/training.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/beobachtung.svg")
+      object.right-svg.beob-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#Spur
     :markdown
       ## Konzept
       #### Training - Spuren
     div.col2
-      object(type="image/svg+xml", data="images/spuren.svg", height="300")
-      object.spur-svg(type="image/svg+xml", data="images/training.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/spuren.svg")
+      object.right-svg.spur-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#Subs
     :markdown
       ## Konzept
       #### Training - Unterszenenfindung
     div.col2
-      object(type="image/svg+xml", data="images/unterszene.svg", height="300")
-      object.sub-svg(type="image/svg+xml", data="images/training.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/unterszene.svg")
+      object.right-svg.sub-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#Ref
     :markdown
       ## Konzept
       #### Training - Referenzobjektwahl
     div.col2
-      object(type="image/svg+xml", data="images/referenzwahl.svg", height="300")
-      object.ref-svg(type="image/svg+xml", data="images/training.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/referenzwahl.svg")
+      object.right-svg.ref-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#ISM
     :markdown
       ## Konzept
       #### Training - ISM-Generierung
     div.col2
-      object(type="image/svg+xml", data="images/ism.svg", height="300")
-      object.ism-svg(type="image/svg+xml", data="images/training.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/ism.svg")
+      object.right-svg.ism-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#Reco
     :markdown
@@ -110,40 +109,40 @@ block slides
       ## Konzept
       #### Erkennung - Beobachtung
     div.col2
-      object(type="image/svg+xml", data="images/erkennung-beob.svg", height="300")
-      object.e-beob-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/erkennung-beob.svg")
+      object.right-svg.e-beob-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#RecoVote
     :markdown
       ## Konzept
       #### Erkennung - Voting
     div.col2
-      object(type="image/svg+xml", data="images/erkennung-vote.svg", height="300")
-      object.e-vote-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/erkennung-vote.svg")
+      object.right-svg.e-vote-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#RecoAgg
     :markdown
       ## Konzept
       #### Erkennung - Aggregation
     div.col2
-      object(type="image/svg+xml", data="images/erkennung-agg.svg", height="300")
-      object.e-agg-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/erkennung-agg.svg")
+      object.right-svg.e-agg-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#RecoRueck
     :markdown
       ## Konzept
       #### Erkennung - Rücktransformation
     div.col2
-      object(type="image/svg+xml", data="images/erkennung-rueck.svg", height="300")
-      object.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/erkennung-rueck.svg")
+      object.right-svg.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#RecoFin
     :markdown
       ## Konzept
       #### Erkennung - Ergebnis
     div.col2
-      object(type="image/svg+xml", data="images/erkennung-finished.svg", height="300")
-      object.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+      object.left-svg(type="image/svg+xml", data="images/erkennung-finished.svg")
+      object.right-svg.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#Eval
     :markdown

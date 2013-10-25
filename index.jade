@@ -8,7 +8,7 @@ block slides
       div(style="background: url('images/training-data.png') no-repeat 0px -100px; height: 300px; margin-left: 100px; background-size: 1024px 500px;")
 
   section.slide#Motivation
-    h2 Warum Szenenerkennung?
+    h2 Motivation
     div(style="position: absolute; width: 100%; height: 80%;")
       img(src="images/motivation1.png", style="position: absolute; top: 0px; left: 0px; height: 100%;")
       ul(style="margin-left: 55%;")
@@ -20,7 +20,10 @@ block slides
           img(src="images/motivation3.png", style="position: absolute; top: 0px; left: 0px; height: 100%;")
           ul
             li(style="list-style-type: none;") "Welche Beziehung haben die Objekte zueinander?"
-
+          ul.slide
+            li Einschränkung des möglichen Handlungsraumes
+            li Hilfe bei der Extraktion semantischer Zusammenhängen
+            li Unterstützung bei der Objektfindung
 
 
   section.slide#Aufgaben
@@ -100,3 +103,89 @@ block slides
     :markdown
       ## Konzept
       #### Erkennung
+    img(src="images/erkennung.svg", height="500px")
+
+  section.slide#RecoBeob
+    :markdown
+      ## Konzept
+      #### Erkennung - Beobachtung
+    div.col2
+      object(type="image/svg+xml", data="images/erkennung-beob.svg", height="300")
+      object.e-beob-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+
+  section.slide#RecoVote
+    :markdown
+      ## Konzept
+      #### Erkennung - Voting
+    div.col2
+      object(type="image/svg+xml", data="images/erkennung-vote.svg", height="300")
+      object.e-vote-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+
+  section.slide#RecoAgg
+    :markdown
+      ## Konzept
+      #### Erkennung - Aggregation
+    div.col2
+      object(type="image/svg+xml", data="images/erkennung-agg.svg", height="300")
+      object.e-agg-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+
+  section.slide#RecoRueck
+    :markdown
+      ## Konzept
+      #### Erkennung - Rücktransformation
+    div.col2
+      object(type="image/svg+xml", data="images/erkennung-rueck.svg", height="300")
+      object.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+
+  section.slide#RecoFin
+    :markdown
+      ## Konzept
+      #### Erkennung - Ergebnis
+    div.col2
+      object(type="image/svg+xml", data="images/erkennung-finished.svg", height="300")
+      object.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg", height="300")
+
+  section.slide#Eval
+    :markdown
+      ## Evaluation
+
+  section.slide#Eval
+    :markdown
+      ## Evaluation
+    video(controls, preload, width="80%", height="80%")
+     source(src="images/ism.mp4", type="video/mp4")
+
+  section.slide#EvalTischSpur
+    :markdown
+      ## Evaluation
+    img(src="images/tisch-spuren.png", width="70%", height="70%")
+
+  section.slide#EvalTischData
+    :markdown
+      ## Evaluation
+    img(src="images/training-data.png", width="70%", height="70%")
+
+  section.slide#EvalTischReco
+    :markdown
+      ## Evaluation
+    img(src="images/s14.png", width="70%", height="70%")
+
+  section.slide#EvalTischReco2
+    :markdown
+      ## Evaluation
+    img(src="images/s6.png", width="70%", height="70%")
+
+  section.slide#EvalPerf
+    :markdown
+      ## Evaluation - Performance
+    object(type="image/svg+xml", data="images/3.svg")
+
+  section.slide#EvalPerf2
+    :markdown
+      ## Evaluation - Performance
+    object(type="image/svg+xml", data="images/2.svg")
+
+  section.slide#Dank
+    :markdown
+      # Danke für die Aufmerksamkeit.
+      ## Fragen?

@@ -134,29 +134,31 @@ html.no-js(lang='en')
           }
         });
 
-        $(".beob-svg")[0].addEventListener("load", function() {
-          var d = $(".beob-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-beobachtung", r).css("fill", "82bfff");
-        });
-        $(".spur-svg")[0].addEventListener("load", function() {
-          var d = $(".spur-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-spuren", r).css("fill", "82bfff");
-        });
-        $(".sub-svg")[0].addEventListener("load", function() {
-          var d = $(".sub-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-unterszenen", r).css("fill", "82bfff");
-        });
-        $(".ref-svg")[0].addEventListener("load", function() {
-          var d = $(".ref-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-referenz", r).css("fill", "82bfff");
-        });
-        $(".ism-svg")[0].addEventListener("load", function() {
-          var d = $(".ism-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-ism", r).css("fill", "82bfff");
+        function fillNodeByClass(cname, nodeid) {
+          var ns = $(cname);
+          function reg(n) {
+            n.addEventListener("load", function() {
+              var d = n.contentDocument;
+              var r = d.documentElement;
+              $(nodeid, r).css("fill", "82bfff");
+            });
+          };
+          for (var i = 0; i < ns.length; i++) {
+            reg(ns[i]);
+          }
+        }
+        var fillings = [
+        [".beob-svg", "#svg-beobachtung"],
+        [".spur-svg", "#svg-spuren"],
+        [".ref-svg", "#svg-referenz"],
+        [".sub-svg", "#svg-unterszenen"],
+        [".ism-svg", "#svg-ism"],
+        [".e-beob-svg", "#svg-beobachtung"],
+        [".e-vote-svg", "#svg-vote"],
+        [".e-agg-svg", "#svg-agg"],
+        [".e-rueck-svg", "#svg-rueck"]
+        ];
+        fillings.forEach(function(f) {
+          fillNodeByClass(f[0], f[1]);
         });
       });

@@ -52,7 +52,7 @@
         </h1>
       </section>
       <section id="Motivation" class="slide">
-        <h2>Warum Szenenerkennung?</h2>
+        <h2>Motivation</h2>
         <div style="position: absolute; width: 100%; height: 80%;"><img src="images/motivation1.png" style="position: absolute; top: 0px; left: 0px; height: 100%;">
           <ul style="margin-left: 55%;">
             <li class="slide">Objekterkennung liefert<img src="images/motivation2.png" style="position: absolute; top: 0px; left: 0px; height: 100%;">
@@ -63,6 +63,11 @@
             <li class="slide">Szenenerkennung liefert<img src="images/motivation3.png" style="position: absolute; top: 0px; left: 0px; height: 100%;">
               <ul>
                 <li style="list-style-type: none;">"Welche Beziehung haben die Objekte zueinander?"</li>
+              </ul>
+              <ul class="slide">
+                <li>Einschränkung des möglichen Handlungsraumes</li>
+                <li>Hilfe bei der Extraktion semantischer Zusammenhängen</li>
+                <li>Unterstützung bei der Objektfindung</li>
               </ul>
             </li>
           </ul>
@@ -146,7 +151,72 @@
       </section>
       <section id="Reco" class="slide"><h2>Konzept</h2>
 
-<h4>Erkennung</h4>
+<h4>Erkennung</h4><img src="images/erkennung.svg" height="500px">
+      </section>
+      <section id="RecoBeob" class="slide"><h2>Konzept</h2>
+
+<h4>Erkennung - Beobachtung</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/erkennung-beob.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/erkennung.svg" height="300" class="e-beob-svg"></object>
+        </div>
+      </section>
+      <section id="RecoVote" class="slide"><h2>Konzept</h2>
+
+<h4>Erkennung - Voting</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/erkennung-vote.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/erkennung.svg" height="300" class="e-vote-svg"></object>
+        </div>
+      </section>
+      <section id="RecoAgg" class="slide"><h2>Konzept</h2>
+
+<h4>Erkennung - Aggregation</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/erkennung-agg.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/erkennung.svg" height="300" class="e-agg-svg"></object>
+        </div>
+      </section>
+      <section id="RecoRueck" class="slide"><h2>Konzept</h2>
+
+<h4>Erkennung - Rücktransformation</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/erkennung-rueck.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/erkennung.svg" height="300" class="e-rueck-svg"></object>
+        </div>
+      </section>
+      <section id="RecoFin" class="slide"><h2>Konzept</h2>
+
+<h4>Erkennung - Ergebnis</h4>
+        <div class="col2">
+          <object type="image/svg+xml" data="images/erkennung-finished.svg" height="300"></object>
+          <object type="image/svg+xml" data="images/erkennung.svg" height="300" class="e-rueck-svg"></object>
+        </div>
+      </section>
+      <section id="Eval" class="slide"><h2>Evaluation</h2>
+      </section>
+      <section id="Eval" class="slide"><h2>Evaluation</h2>
+        <video controls preload width="80%" height="80%">
+          <source src="images/ism.mp4" type="video/mp4">
+        </video>
+      </section>
+      <section id="EvalTischSpur" class="slide"><h2>Evaluation</h2><img src="images/tisch-spuren.png" width="70%" height="70%">
+      </section>
+      <section id="EvalTischData" class="slide"><h2>Evaluation</h2><img src="images/training-data.png" width="70%" height="70%">
+      </section>
+      <section id="EvalTischReco" class="slide"><h2>Evaluation</h2><img src="images/s14.png" width="70%" height="70%">
+      </section>
+      <section id="EvalTischReco2" class="slide"><h2>Evaluation</h2><img src="images/s6.png" width="70%" height="70%">
+      </section>
+      <section id="EvalPerf" class="slide"><h2>Evaluation - Performance</h2>
+        <object type="image/svg+xml" data="images/3.svg"></object>
+      </section>
+      <section id="EvalPerf2" class="slide"><h2>Evaluation - Performance</h2>
+        <object type="image/svg+xml" data="images/2.svg"></object>
+      </section>
+      <section id="Dank" class="slide"><h1>Danke für die Aufmerksamkeit.</h1>
+
+<h2>Fragen?</h2>
       </section>
       <!-- deck.navigation snippet--><a href="#" title="Previous" class="deck-prev-link">&#8592;</a><a href="#" title="Next" class="deck-next-link">&#8594;</a>
       <!-- deck.status snippet-->
@@ -203,30 +273,32 @@
           }
         });
         
-        $(".beob-svg")[0].addEventListener("load", function() {
-          var d = $(".beob-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-beobachtung", r).css("fill", "82bfff");
-        });
-        $(".spur-svg")[0].addEventListener("load", function() {
-          var d = $(".spur-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-spuren", r).css("fill", "82bfff");
-        });
-        $(".sub-svg")[0].addEventListener("load", function() {
-          var d = $(".sub-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-unterszenen", r).css("fill", "82bfff");
-        });
-        $(".ref-svg")[0].addEventListener("load", function() {
-          var d = $(".ref-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-referenz", r).css("fill", "82bfff");
-        });
-        $(".ism-svg")[0].addEventListener("load", function() {
-          var d = $(".ism-svg")[0].contentDocument;
-          var r = d.documentElement;
-          $("#svg-ism", r).css("fill", "82bfff");
+        function fillNodeByClass(cname, nodeid) {
+          var ns = $(cname);
+          function reg(n) {
+            n.addEventListener("load", function() {
+              var d = n.contentDocument;
+              var r = d.documentElement;
+              $(nodeid, r).css("fill", "82bfff");
+            });
+          };
+          for (var i = 0; i < ns.length; i++) {
+            reg(ns[i]);
+          }
+        }
+        var fillings = [
+        [".beob-svg", "#svg-beobachtung"],
+        [".spur-svg", "#svg-spuren"],
+        [".ref-svg", "#svg-referenz"],
+        [".sub-svg", "#svg-unterszenen"],
+        [".ism-svg", "#svg-ism"],
+        [".e-beob-svg", "#svg-beobachtung"],
+        [".e-vote-svg", "#svg-vote"],
+        [".e-agg-svg", "#svg-agg"],
+        [".e-rueck-svg", "#svg-rueck"]
+        ];
+        fillings.forEach(function(f) {
+          fillNodeByClass(f[0], f[1]);
         });
       });
     </script>

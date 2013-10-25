@@ -2,28 +2,29 @@ extends layout
 
 block slides
   section.slide#title
-    h3 Reno Reckling | 28.10.2013
-    h1 Szenenerkennung mittels hierarchischer Implicit Shape Models
+    h4 Reno Reckling | 
+      span#clock
+    h1(style="top: 60%;") Szenenerkennung mittels hierarchischer Implicit Shape Models
       .subtitle basierend auf räumlichen Objektrelationen für das Programmieren durch Vormachen
-      div(style="background: url('images/training-data.png') no-repeat 0px -100px; height: 300px; margin-left: 100px; background-size: 1024px 500px;")
+      div(style="background: url('images/training-data.png') no-repeat 0px -130px; height: 400px; background-size: 1024px 600px;")
 
   section.slide#Motivation
     h2 Motivation
     div(style="position: relative; padding-right: 48px; width: 100%; height: 80%;")
-      img(src="images/motivation1.png", style="position: absolute; top: 0px; left: 0px; width: 45%;")
-      ul(style="margin-left: 50%;")
+      img.motiv-img(src="images/motivation1.png")
+      ul(style="margin-left: 52%;")
         li.slide Objekterkennung liefert
-          img(src="images/motivation2.png", style="position: absolute; top: 0px; left: 0px; width: 45%;")
+          img.motiv-img(src="images/motivation2.png")
           ul
             li(style="list-style-type: none;") "Welche Objekte sehe ich?"
         li.slide Szenenerkennung liefert
-          img(src="images/motivation3.png", style="position: absolute; top: 0px; left: 0px; width: 45%;")
+          img.motiv-img(src="images/motivation3.png")
           ul
             li(style="list-style-type: none;") "Welche Beziehung haben die Objekte zueinander?"
-          ul.slide
-            li Einschränkung des möglichen Handlungsraumes
-            li Hilfe bei der Extraktion semantischer Zusammenhängen
-            li Unterstützung bei der Objektfindung
+        span.slide
+          li Einschränkung des möglichen Handlungsraumes
+          li Hilfe bei der Extraktion semantischer Zusammenhängen
+          li Unterstützung bei der Objektfindung
 
   section.slide#Aufgaben
     h2 Aufgabenstellung
@@ -33,10 +34,10 @@ block slides
       li Generieren eines Modells zur Beschreibung von
         ul
           li Lage und Orientierung von Objekten zueinander
-            p "Messer liegt immer rechts von Teller."
+            p(style="margin-bottom: 0;") "Messer liegt immer rechts von Teller."
           li Unterszenen auf Basis von Heuristiken
           li Lage und Orietierung von Unterszenen zueinander
-            p "Messer und Teller liegen immer vor der Tasse."
+            p(style="margin-bottom: 0;") "Messer und Teller liegen immer vor der Tasse."
 
   section.slide#Einschrankungen
     h2 Einschränkungen
@@ -157,42 +158,42 @@ block slides
   section.slide#EvalTischSpur
     :markdown
       ## Evaluation
-    img(src="images/tisch-spuren.png", width="70%", height="70%")
+    img.eval-img(src="images/tisch-spuren.png")
 
   section.slide#EvalTischData
     :markdown
       ## Evaluation
-    img(src="images/training-data.png", width="70%", height="70%")
+    img.eval-img(src="images/training-data.png")
 
   section.slide#EvalTischReco
     :markdown
       ## Evaluation
-    img(src="images/s14.png", width="70%", height="70%")
+    img.eval-img(src="images/s14.png")
 
   section.slide#EvalTischReco2
     :markdown
       ## Evaluation
-    img(src="images/s6.png", width="70%", height="70%")
+    img.eval-img(src="images/s6.png")
 
   section.slide#EvalTischReco3
     :markdown
       ## Evaluation
-    img(src="images/s10.png", width="70%", height="70%")
+    img.eval-img(src="images/s10.png")
 
   section.slide#EvalTischReco4
     :markdown
       ## Evaluation
-    img(src="images/alle erkannt.png", width="60%", height="60%")
+    img.eval-img(src="images/alle erkannt.png")
 
   section.slide#EvalPerf
     :markdown
       ## Evaluation - Performance
-    object(type="image/svg+xml", data="images/3.svg")
+    object.perf-diag(type="image/svg+xml", data="images/3.svg")
 
   section.slide#EvalPerf2
     :markdown
       ## Evaluation - Performance
-    object(type="image/svg+xml", data="images/2.svg")
+    object.perf-diag(type="image/svg+xml", data="images/2.svg")
 
   section.slide#Dank
     :markdown

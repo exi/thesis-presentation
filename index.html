@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
     <link rel="stylesheet" href="extensions/status/deck.status.css">
     <link rel="stylesheet" href="extensions/hash/deck.hash.css">
-    <link rel="stylesheet" href="extensions/scale/deck.scale.css">
+    <!--link(rel="stylesheet", href="extensions/scale/deck.scale.css")-->
     <!-- Style theme. More available in /themes/style/ or create your own.-->
     <!-- Transition. More available in /themes/transition/ or create your own.-->
     <link rel="stylesheet" href="themes/transition/fade.css">
@@ -45,31 +45,29 @@
     <script src="core/deck.core.js"></script>
     <div class="deck-container">
       <section id="title" class="slide">
-        <h3>Reno Reckling | 28.10.2013</h3>
-        <h1>Szenenerkennung mittels hierarchischer Implicit Shape Models
+        <h4>Reno Reckling | <span id="clock"></span></h4>
+        <h1 style="top: 60%;">Szenenerkennung mittels hierarchischer Implicit Shape Models
           <div class="subtitle">basierend auf räumlichen Objektrelationen für das Programmieren durch Vormachen</div>
-          <div style="background: url('images/training-data.png') no-repeat 0px -100px; height: 300px; margin-left: 100px; background-size: 1024px 500px;"></div>
+          <div style="background: url('images/training-data.png') no-repeat 0px -130px; height: 400px; background-size: 1024px 600px;"></div>
         </h1>
       </section>
       <section id="Motivation" class="slide">
         <h2>Motivation</h2>
-        <div style="position: relative; padding-right: 48px; width: 100%; height: 80%;"><img src="images/motivation1.png" style="position: absolute; top: 0px; left: 0px; width: 45%;">
-          <ul style="margin-left: 50%;">
-            <li class="slide">Objekterkennung liefert<img src="images/motivation2.png" style="position: absolute; top: 0px; left: 0px; width: 45%;">
+        <div style="position: relative; padding-right: 48px; width: 100%; height: 80%;"><img src="images/motivation1.png" class="motiv-img">
+          <ul style="margin-left: 52%;">
+            <li class="slide">Objekterkennung liefert<img src="images/motivation2.png" class="motiv-img">
               <ul>
                 <li style="list-style-type: none;">"Welche Objekte sehe ich?"</li>
               </ul>
             </li>
-            <li class="slide">Szenenerkennung liefert<img src="images/motivation3.png" style="position: absolute; top: 0px; left: 0px; width: 45%;">
+            <li class="slide">Szenenerkennung liefert<img src="images/motivation3.png" class="motiv-img">
               <ul>
                 <li style="list-style-type: none;">"Welche Beziehung haben die Objekte zueinander?"</li>
               </ul>
-              <ul class="slide">
-                <li>Einschränkung des möglichen Handlungsraumes</li>
-                <li>Hilfe bei der Extraktion semantischer Zusammenhängen</li>
-                <li>Unterstützung bei der Objektfindung</li>
-              </ul>
-            </li>
+            </li><span class="slide">
+              <li>Einschränkung des möglichen Handlungsraumes</li>
+              <li>Hilfe bei der Extraktion semantischer Zusammenhängen</li>
+              <li>Unterstützung bei der Objektfindung</li></span>
           </ul>
         </div>
       </section>
@@ -81,11 +79,11 @@
           <li>Generieren eines Modells zur Beschreibung von
             <ul>
               <li>Lage und Orientierung von Objekten zueinander
-                <p>"Messer liegt immer rechts von Teller."</p>
+                <p style="margin-bottom: 0;">"Messer liegt immer rechts von Teller."</p>
               </li>
               <li>Unterszenen auf Basis von Heuristiken</li>
               <li>Lage und Orietierung von Unterszenen zueinander
-                <p>"Messer und Teller liegen immer vor der Tasse."</p>
+                <p style="margin-bottom: 0;">"Messer und Teller liegen immer vor der Tasse."</p>
               </li>
             </ul>
           </li>
@@ -200,23 +198,23 @@
           <source src="images/ism.mp4" type="video/mp4">
         </video>
       </section>
-      <section id="EvalTischSpur" class="slide"><h2>Evaluation</h2><img src="images/tisch-spuren.png" width="70%" height="70%">
+      <section id="EvalTischSpur" class="slide"><h2>Evaluation</h2><img src="images/tisch-spuren.png" class="eval-img">
       </section>
-      <section id="EvalTischData" class="slide"><h2>Evaluation</h2><img src="images/training-data.png" width="70%" height="70%">
+      <section id="EvalTischData" class="slide"><h2>Evaluation</h2><img src="images/training-data.png" class="eval-img">
       </section>
-      <section id="EvalTischReco" class="slide"><h2>Evaluation</h2><img src="images/s14.png" width="70%" height="70%">
+      <section id="EvalTischReco" class="slide"><h2>Evaluation</h2><img src="images/s14.png" class="eval-img">
       </section>
-      <section id="EvalTischReco2" class="slide"><h2>Evaluation</h2><img src="images/s6.png" width="70%" height="70%">
+      <section id="EvalTischReco2" class="slide"><h2>Evaluation</h2><img src="images/s6.png" class="eval-img">
       </section>
-      <section id="EvalTischReco3" class="slide"><h2>Evaluation</h2><img src="images/s10.png" width="70%" height="70%">
+      <section id="EvalTischReco3" class="slide"><h2>Evaluation</h2><img src="images/s10.png" class="eval-img">
       </section>
-      <section id="EvalTischReco4" class="slide"><h2>Evaluation</h2><img src="images/alle erkannt.png" width="60%" height="60%">
+      <section id="EvalTischReco4" class="slide"><h2>Evaluation</h2><img src="images/alle erkannt.png" class="eval-img">
       </section>
       <section id="EvalPerf" class="slide"><h2>Evaluation - Performance</h2>
-        <object type="image/svg+xml" data="images/3.svg"></object>
+        <object type="image/svg+xml" data="images/3.svg" class="perf-diag"></object>
       </section>
       <section id="EvalPerf2" class="slide"><h2>Evaluation - Performance</h2>
-        <object type="image/svg+xml" data="images/2.svg"></object>
+        <object type="image/svg+xml" data="images/2.svg" class="perf-diag"></object>
       </section>
       <section id="Dank" class="slide"><h1>Danke für die Aufmerksamkeit.</h1>
 
@@ -245,7 +243,7 @@
     <script src="extensions/goto/deck.goto.js"></script>
     <script src="extensions/status/deck.status.js"></script>
     <script src="extensions/navigation/deck.navigation.js"></script>
-    <script src="extensions/scale/deck.scale.js"></script>
+    <!--script(src="extensions/scale/deck.scale.js")-->
     <!-- Initialize the deck.-->
     <script>
       $(function () {
@@ -306,7 +304,12 @@
         fillings.forEach(function(f) {
           fillNodeByClass(f[0], f[1]);
         });
-        $.deck('enableScale');
+        //$.deck('enableScale');
+        setInterval(function() {
+          var d = new Date();
+          var ds = d.getDate() + "." + d.getMonth() + "." + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+          $("#clock").text(ds);
+        }, 1000);
       });
     </script>
   </body>

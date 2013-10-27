@@ -46,14 +46,20 @@
     <div class="deck-container">
       <section id="title" class="slide">
         <h4>Reno Reckling | <span id="clock"></span></h4>
-        <h1 style="top: 60%;">Szenenerkennung mittels hierarchischer Implicit Shape Models
+        <h1 style="top: 50%;">Szenenerkennung mittels hierarchischer Implicit Shape Models
           <div class="subtitle">basierend auf räumlichen Objektrelationen für das Programmieren durch Vormachen</div>
           <div style="background: url('images/training-data.png') no-repeat 0px -130px; height: 400px; background-size: 1024px 600px;"></div>
         </h1>
       </section>
       <section id="Motivation" class="slide">
+        <!--
+        <p>this looks rather cool</p>
+        <ul>
+          <li>i wander what it does</li>
+        </ul>
+        -->
         <h2>Motivation</h2>
-        <div style="position: relative; padding-right: 48px; width: 100%; height: 80%;"><img src="images/motivation1.png" class="motiv-img">
+        <div style="position: relative; margin-right: 48px; width: 100%; height: 80%;"><img src="images/motivation1.png" class="motiv-img">
           <ul style="margin-left: 52%;">
             <li class="slide">Objekterkennung liefert<img src="images/motivation2.png" class="motiv-img">
               <ul>
@@ -66,8 +72,9 @@
               </ul>
             </li><span class="slide">
               <li>Einschränkung des möglichen Handlungsraumes</li>
-              <li>Hilfe bei der Extraktion semantischer Zusammenhängen</li>
-              <li>Unterstützung bei der Objektfindung</li></span>
+              <li>Hilfe bei der Extraktion semantischer Zusammenhänge</li>
+              <li>Unterstützung bei der Objektfindung</li>
+              <li>Inferenz unvollständiger Objektinformationen</li></span>
           </ul>
         </div>
       </section>
@@ -81,7 +88,7 @@
               <li>Lage und Orientierung von Objekten zueinander
                 <p style="margin-bottom: 0;">"Messer liegt immer rechts von Teller."</p>
               </li>
-              <li>Unterszenen auf Basis von Heuristiken</li>
+              <li>Unterszenen auf Basis von Heuristiken und Clustern</li>
               <li>Lage und Orietierung von Unterszenen zueinander
                 <p style="margin-bottom: 0;">"Messer und Teller liegen immer vor der Tasse."</p>
               </li>
@@ -94,22 +101,30 @@
         <div>Kein ...
           <ul>
             <li>online Training</li>
-            <li>automatisches Erlernen von neuen Zusammenhangstypen</li>
-            <li>selbstständige extraktion von Szenen aus den Trainingsdaten</li>
+            <li>automatisches Erlernen von neuen Heuristiken</li>
+            <li>selbstständige Extraktion von Szenen aus den Trainingsdaten</li>
           </ul>
         </div>
       </section>
       <section id="Konzept" class="slide"><h2>Konzept</h2>
 
-<h4>Implicit Shape Model</h4><img src="images/leibe-car.jpg" height="100%" width="100%">
+<h4>Implicit Shape Model nach Leibe</h4><small>"Combined Object Categorization and Segmentation With An Implicit Shape Model"</small><img src="images/leibe-car.jpg" width="100%">
+      </section>
+      <section id="Vertausch" class="slide"><h2>Konzept</h2>
+
+<h4>Vertauschungsproblem</h4>
+        <object type="image/svg+xml" data="images/vertauschungsproblem.svg" class="perf-diag"></object>
       </section>
       <section id="Train" class="slide"><h2>Konzept</h2>
 
-<h4>Training</h4><img src="images/training.svg" height="500px">
+<h4>Training</h4>
       </section>
       <section id="Beobacht" class="slide"><h2>Konzept</h2>
 
 <h4>Training</h4>
+        <ul>
+          <li style="list-style-type: none;">Snapshots der erkannten Objekte</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/beobachtung.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg beob-svg"></object>
@@ -118,6 +133,9 @@
       <section id="Spur" class="slide"><h2>Konzept</h2>
 
 <h4>Training</h4>
+        <ul>
+          <li style="list-style-type: none;">Extraktion der Objektbewegungen</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/spuren.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg spur-svg"></object>
@@ -126,6 +144,9 @@
       <section id="Subs" class="slide"><h2>Konzept</h2>
 
 <h4>Training</h4>
+        <ul>
+          <li style="list-style-type: none;">Anwendung der Clusterheuristiken</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/unterszene.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg sub-svg"></object>
@@ -134,6 +155,9 @@
       <section id="Ref" class="slide"><h2>Konzept</h2>
 
 <h4>Training</h4>
+        <ul>
+          <li style="list-style-type: none;">Bestimmung des Referenzobjektes</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/referenzwahl.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg ref-svg"></object>
@@ -142,6 +166,9 @@
       <section id="ISM" class="slide"><h2>Konzept</h2>
 
 <h4>Training</h4>
+        <ul>
+          <li style="list-style-type: none;">Aufbau des Implicit-Shape-Models</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/ism.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg ism-svg"></object>
@@ -149,11 +176,14 @@
       </section>
       <section id="Reco" class="slide"><h2>Konzept</h2>
 
-<h4>Erkennung</h4><img src="images/erkennung.svg" height="500px">
+<h4>Erkennung</h4>
       </section>
       <section id="RecoBeob" class="slide"><h2>Konzept</h2>
 
 <h4>Erkennung</h4>
+        <ul>
+          <li style="list-style-type: none;">Erkannte Objekte als Eingabe</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-beob.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-beob-svg"></object>
@@ -162,6 +192,9 @@
       <section id="RecoVote" class="slide"><h2>Konzept</h2>
 
 <h4>Erkennung</h4>
+        <ul>
+          <li style="list-style-type: none;">Berechnung der Votes relativ zu jedem Objekt</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-vote.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-vote-svg"></object>
@@ -170,6 +203,9 @@
       <section id="RecoAgg" class="slide"><h2>Konzept</h2>
 
 <h4>Erkennung</h4>
+        <ul>
+          <li style="list-style-type: none;">Aggregation der Votes in Buckets</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-agg.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-agg-svg"></object>
@@ -178,6 +214,9 @@
       <section id="RecoRueck" class="slide"><h2>Konzept</h2>
 
 <h4>Erkennung</h4>
+        <ul>
+          <li style="list-style-type: none;">Rückprojektion zur Positionsverifikation</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-rueck.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-rueck-svg"></object>
@@ -186,35 +225,50 @@
       <section id="RecoFin" class="slide"><h2>Konzept</h2>
 
 <h4>Erkennung - Ergebnis</h4>
+        <ul>
+          <li style="list-style-type: none;">Einfügen der Unterszene als Pseudoobjekt, Wiederholung</li>
+        </ul>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-finished.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-rueck-svg"></object>
         </div>
       </section>
+      <section id="RecoAggVis" class="slide"><h2>Konzept</h2>
+
+<h4>Erkennung - Aggregation</h4>
+        <div style="height: 80%"><img src="images/voting-cluster-neu.png" style="position: relative; top: -40px; z-index: -1;"></div>
+      </section>
       <section id="Eval" class="slide"><h2>Evaluation</h2>
       </section>
-      <section id="EvalVid" class="slide"><h2>Evaluation</h2>
-        <video controls preload width="80%" height="80%">
-          <source src="images/ism.mp4" type="video/mp4">
-        </video>
+      <section id="EvalTischSpur" class="slide"><h2>Evaluation</h2><img src="images/tisch-spuren.png">
       </section>
-      <section id="EvalTischSpur" class="slide"><h2>Evaluation</h2><img src="images/tisch-spuren.png" class="eval-img">
+      <section id="EvalTischData" class="slide"><h2>Evaluation</h2><img src="images/training-data.png">
       </section>
-      <section id="EvalTischData" class="slide"><h2>Evaluation</h2><img src="images/training-data.png" class="eval-img">
+      <section id="EvalTischReco" class="slide"><h2>Evaluation</h2><img src="images/s14.png">
       </section>
-      <section id="EvalTischReco" class="slide"><h2>Evaluation</h2><img src="images/s14.png" class="eval-img">
+      <section id="EvalTischReco2" class="slide"><h2>Evaluation</h2><img src="images/s6.png">
       </section>
-      <section id="EvalTischReco2" class="slide"><h2>Evaluation</h2><img src="images/s6.png" class="eval-img">
+      <section id="EvalTischReco3" class="slide"><h2>Evaluation</h2><img src="images/s10.png">
       </section>
-      <section id="EvalTischReco3" class="slide"><h2>Evaluation</h2><img src="images/s10.png" class="eval-img">
+      <section id="EvalAll" class="slide"><h2>Evaluation - Testreihen</h2>
+        <div style="margin: auto; text-align: center;"><img src="images/s1.png" class="test-img"><img src="images/s2.png" class="test-img"><img src="images/s3.png" class="test-img"><img src="images/s4.png" class="test-img"><img src="images/s5.png" class="test-img"><img src="images/s6.png" class="test-img"><img src="images/s7.png" class="test-img"><img src="images/s8.png" class="test-img"><img src="images/s9.png" class="test-img"><img src="images/s10.png" class="test-img"><img src="images/s11.png" class="test-img"><img src="images/s12.png" class="test-img"><img src="images/s13.png" class="test-img"><img src="images/s14.png" class="test-img"><img src="images/s15.png" class="test-img"></div>
       </section>
-      <section id="EvalTischReco4" class="slide"><h2>Evaluation</h2><img src="images/alle erkannt.png" class="eval-img">
+      <section id="EvalTischReco4" class="slide"><h2>Evaluation</h2><img src="images/alle erkannt.png">
       </section>
       <section id="EvalPerf" class="slide"><h2>Evaluation - Performance</h2>
         <object type="image/svg+xml" data="images/3.svg" class="perf-diag"></object>
       </section>
       <section id="EvalPerf2" class="slide"><h2>Evaluation - Performance</h2>
         <object type="image/svg+xml" data="images/2.svg" class="perf-diag"></object>
+      </section>
+      <section id="EvalVid" class="slide"><h2>Evaluation</h2>
+        <video controls preload width="80%" height="80%">
+          <source src="images/ism.mp4" type="video/mp4">
+        </video>
+      </section>
+      <section id="Zusammenfassung" class="slide"><h2>Zusammenfassung</h2>
+
+<ul><li>Lange Beobachtungszeiten</li><li>Gute Geschwindigkeit</li><li>Hierarchische Cluster</li><li>Lösung des Vertauschungsproblems</li><li>Erweiterbare Schnittstelle für Clusterheuristiken</li></ul>
       </section>
       <section id="Dank" class="slide"><h1>Danke für die Aufmerksamkeit.</h1>
 
@@ -243,6 +297,7 @@
     <script src="extensions/goto/deck.goto.js"></script>
     <script src="extensions/status/deck.status.js"></script>
     <script src="extensions/navigation/deck.navigation.js"></script>
+    <script src="extensions/presenterview/deck.presenterview.js"></script>
     <!--script(src="extensions/scale/deck.scale.js")-->
     <!-- Initialize the deck.-->
     <script>
@@ -281,9 +336,7 @@
             setTimeout(function() {
               var d = n.contentDocument;
               var r = d.documentElement;
-              console.log(r, $(nodeid, r));
               $(nodeid, r).css("fill", "#82bfff");
-              console.log($(nodeid, r).css("fill"));
             }, 5000);
           };
           for (var i = 0; i < ns.length; i++) {

@@ -4,13 +4,17 @@ block slides
   section.slide#title
     h4 Reno Reckling | 
       span#clock
-    h1(style="top: 60%;") Szenenerkennung mittels hierarchischer Implicit Shape Models
+    h1(style="top: 50%;") Szenenerkennung mittels hierarchischer Implicit Shape Models
       .subtitle basierend auf räumlichen Objektrelationen für das Programmieren durch Vormachen
       div(style="background: url('images/training-data.png') no-repeat 0px -130px; height: 400px; background-size: 1024px 600px;")
 
   section.slide#Motivation
+    //
+      p this looks rather cool
+      ul
+        li i wander what it does
     h2 Motivation
-    div(style="position: relative; padding-right: 48px; width: 100%; height: 80%;")
+    div(style="position: relative; margin-right: 48px; width: 100%; height: 80%;")
       img.motiv-img(src="images/motivation1.png")
       ul(style="margin-left: 52%;")
         li.slide Objekterkennung liefert
@@ -23,8 +27,9 @@ block slides
             li(style="list-style-type: none;") "Welche Beziehung haben die Objekte zueinander?"
         span.slide
           li Einschränkung des möglichen Handlungsraumes
-          li Hilfe bei der Extraktion semantischer Zusammenhängen
+          li Hilfe bei der Extraktion semantischer Zusammenhänge
           li Unterstützung bei der Objektfindung
+          li Inferenz unvollständiger Objektinformationen
 
   section.slide#Aufgaben
     h2 Aufgabenstellung
@@ -35,7 +40,7 @@ block slides
         ul
           li Lage und Orientierung von Objekten zueinander
             p(style="margin-bottom: 0;") "Messer liegt immer rechts von Teller."
-          li Unterszenen auf Basis von Heuristiken
+          li Unterszenen auf Basis von Heuristiken und Clustern
           li Lage und Orietierung von Unterszenen zueinander
             p(style="margin-bottom: 0;") "Messer und Teller liegen immer vor der Tasse."
 
@@ -44,25 +49,33 @@ block slides
     div Kein ...
       ul
         li online Training
-        li automatisches Erlernen von neuen Zusammenhangstypen
-        li selbstständige extraktion von Szenen aus den Trainingsdaten
+        li automatisches Erlernen von neuen Heuristiken
+        li selbstständige Extraktion von Szenen aus den Trainingsdaten
 
   section.slide#Konzept
     :markdown
       ## Konzept
-      #### Implicit Shape Model
-    img(src="images/leibe-car.jpg", height="100%", width="100%")
+      #### Implicit Shape Model nach Leibe
+    small "Combined Object Categorization and Segmentation With An Implicit Shape Model"
+    img(src="images/leibe-car.jpg", width="100%")
+
+  section.slide#Vertausch
+    :markdown
+      ## Konzept
+      #### Vertauschungsproblem
+    object.perf-diag(type="image/svg+xml", data="images/vertauschungsproblem.svg")
 
   section.slide#Train
     :markdown
       ## Konzept
       #### Training
-    img(src="images/training.svg", height="500px")
 
   section.slide#Beobacht
     :markdown
       ## Konzept
       #### Training
+    ul
+      li(style="list-style-type: none;") Snapshots der erkannten Objekte
     div.col2
       object.left-svg(type="image/svg+xml", data="images/beobachtung.svg")
       object.right-svg.beob-svg(type="image/svg+xml", data="images/training.svg")
@@ -71,6 +84,8 @@ block slides
     :markdown
       ## Konzept
       #### Training
+    ul
+      li(style="list-style-type: none;") Extraktion der Objektbewegungen
     div.col2
       object.left-svg(type="image/svg+xml", data="images/spuren.svg")
       object.right-svg.spur-svg(type="image/svg+xml", data="images/training.svg")
@@ -79,6 +94,8 @@ block slides
     :markdown
       ## Konzept
       #### Training
+    ul
+      li(style="list-style-type: none;") Anwendung der Clusterheuristiken
     div.col2
       object.left-svg(type="image/svg+xml", data="images/unterszene.svg")
       object.right-svg.sub-svg(type="image/svg+xml", data="images/training.svg")
@@ -87,6 +104,8 @@ block slides
     :markdown
       ## Konzept
       #### Training
+    ul
+      li(style="list-style-type: none;") Bestimmung des Referenzobjektes
     div.col2
       object.left-svg(type="image/svg+xml", data="images/referenzwahl.svg")
       object.right-svg.ref-svg(type="image/svg+xml", data="images/training.svg")
@@ -95,6 +114,8 @@ block slides
     :markdown
       ## Konzept
       #### Training
+    ul
+      li(style="list-style-type: none;") Aufbau des Implicit-Shape-Models
     div.col2
       object.left-svg(type="image/svg+xml", data="images/ism.svg")
       object.right-svg.ism-svg(type="image/svg+xml", data="images/training.svg")
@@ -103,12 +124,13 @@ block slides
     :markdown
       ## Konzept
       #### Erkennung
-    img(src="images/erkennung.svg", height="500px")
 
   section.slide#RecoBeob
     :markdown
       ## Konzept
       #### Erkennung
+    ul
+      li(style="list-style-type: none;") Erkannte Objekte als Eingabe
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-beob.svg")
       object.right-svg.e-beob-svg(type="image/svg+xml", data="images/erkennung.svg")
@@ -117,6 +139,8 @@ block slides
     :markdown
       ## Konzept
       #### Erkennung
+    ul
+      li(style="list-style-type: none;") Berechnung der Votes relativ zu jedem Objekt
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-vote.svg")
       object.right-svg.e-vote-svg(type="image/svg+xml", data="images/erkennung.svg")
@@ -125,6 +149,8 @@ block slides
     :markdown
       ## Konzept
       #### Erkennung
+    ul
+      li(style="list-style-type: none;") Aggregation der Votes in Buckets
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-agg.svg")
       object.right-svg.e-agg-svg(type="image/svg+xml", data="images/erkennung.svg")
@@ -133,6 +159,8 @@ block slides
     :markdown
       ## Konzept
       #### Erkennung
+    ul
+      li(style="list-style-type: none;") Rückprojektion zur Positionsverifikation
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-rueck.svg")
       object.right-svg.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg")
@@ -141,49 +169,73 @@ block slides
     :markdown
       ## Konzept
       #### Erkennung - Ergebnis
+    ul
+      li(style="list-style-type: none;") Einfügen der Unterszene als Pseudoobjekt, Wiederholung
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-finished.svg")
       object.right-svg.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg")
+
+  section.slide#RecoAggVis
+    :markdown
+      ## Konzept
+      #### Erkennung - Aggregation
+    div(style="height: 80%")
+      img(src="images/voting-cluster-neu.png", style="position: relative; top: -40px; z-index: -1;")
 
   section.slide#Eval
     :markdown
       ## Evaluation
 
-  section.slide#EvalVid
-    :markdown
-      ## Evaluation
-    video(controls, preload, width="80%", height="80%")
-     source(src="images/ism.mp4", type="video/mp4")
-
   section.slide#EvalTischSpur
     :markdown
       ## Evaluation
-    img.eval-img(src="images/tisch-spuren.png")
+    img(src="images/tisch-spuren.png")
 
   section.slide#EvalTischData
     :markdown
       ## Evaluation
-    img.eval-img(src="images/training-data.png")
+    img(src="images/training-data.png")
 
   section.slide#EvalTischReco
     :markdown
       ## Evaluation
-    img.eval-img(src="images/s14.png")
+    img(src="images/s14.png")
 
   section.slide#EvalTischReco2
     :markdown
       ## Evaluation
-    img.eval-img(src="images/s6.png")
+    img(src="images/s6.png")
 
   section.slide#EvalTischReco3
     :markdown
       ## Evaluation
-    img.eval-img(src="images/s10.png")
+    img(src="images/s10.png")
+
+  section.slide#EvalAll
+    :markdown
+      ## Evaluation - Testreihen
+    div(style="margin: auto; text-align: center;")
+      img.test-img(src="images/s1.png")
+      img.test-img(src="images/s2.png")
+      img.test-img(src="images/s3.png")
+      img.test-img(src="images/s4.png")
+      img.test-img(src="images/s5.png")
+      img.test-img(src="images/s6.png")
+      img.test-img(src="images/s7.png")
+      img.test-img(src="images/s8.png")
+      img.test-img(src="images/s9.png")
+      img.test-img(src="images/s10.png")
+      img.test-img(src="images/s11.png")
+      img.test-img(src="images/s12.png")
+      img.test-img(src="images/s13.png")
+      img.test-img(src="images/s14.png")
+      img.test-img(src="images/s15.png")
+
 
   section.slide#EvalTischReco4
     :markdown
       ## Evaluation
-    img.eval-img(src="images/alle erkannt.png")
+    img(src="images/alle erkannt.png")
 
   section.slide#EvalPerf
     :markdown
@@ -194,6 +246,21 @@ block slides
     :markdown
       ## Evaluation - Performance
     object.perf-diag(type="image/svg+xml", data="images/2.svg")
+
+  section.slide#EvalVid
+    :markdown
+      ## Evaluation
+    video(controls, preload, width="80%", height="80%")
+     source(src="images/ism.mp4", type="video/mp4")
+
+  section.slide#Zusammenfassung
+    :markdown
+      ##Zusammenfassung
+      * Lange Beobachtungszeiten
+      * Gute Geschwindigkeit
+      * Hierarchische Cluster
+      * Lösung des Vertauschungsproblems
+      * Erweiterbare Schnittstelle für Clusterheuristiken
 
   section.slide#Dank
     :markdown

@@ -101,6 +101,7 @@ html.no-js(lang='en')
     script(src="extensions/goto/deck.goto.js")
     script(src="extensions/status/deck.status.js")
     script(src="extensions/navigation/deck.navigation.js")
+    script(src="extensions/presenterview/deck.presenterview.js")
     //script(src="extensions/scale/deck.scale.js")
 
     // Initialize the deck.
@@ -140,9 +141,7 @@ html.no-js(lang='en')
             setTimeout(function() {
               var d = n.contentDocument;
               var r = d.documentElement;
-              console.log(r, $(nodeid, r));
               $(nodeid, r).css("fill", "#82bfff");
-              console.log($(nodeid, r).css("fill"));
             }, 5000);
           };
           for (var i = 0; i < ns.length; i++) {

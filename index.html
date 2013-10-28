@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
     <link rel="stylesheet" href="extensions/status/deck.status.css">
     <link rel="stylesheet" href="extensions/hash/deck.hash.css">
-    <!--link(rel="stylesheet", href="extensions/scale/deck.scale.css")-->
+    <link rel="stylesheet" href="extensions/fit/deck.fit.css">
+    <link rel="stylesheet" href="extensions/scale/deck.scale.css">
     <!-- Style theme. More available in /themes/style/ or create your own.-->
     <!-- Transition. More available in /themes/transition/ or create your own.-->
     <link rel="stylesheet" href="themes/transition/fade.css">
@@ -117,7 +118,7 @@
       </section>
       <section id="Train" class="slide"><h2>Konzept</h2>
 
-<h4>Training</h4>
+<h1>Training</h1>
       </section>
       <section id="Beobacht" class="slide"><h2>Konzept</h2>
 
@@ -176,7 +177,7 @@
       </section>
       <section id="Reco" class="slide"><h2>Konzept</h2>
 
-<h4>Erkennung</h4>
+<h1>Erkennung</h1>
       </section>
       <section id="RecoBeob" class="slide"><h2>Konzept</h2>
 
@@ -234,11 +235,9 @@
         </div>
       </section>
       <section id="RecoAggVis" class="slide"><h2>Konzept</h2>
-
-<h4>Erkennung - Aggregation</h4>
-        <div style="height: 80%"><img src="images/voting-cluster-neu.png" style="position: relative; top: -40px; z-index: -1;"></div>
+        <div style="height: 80%"><img src="images/voting-cluster-neu.png" style="position: relative; z-index: -1;"></div>
       </section>
-      <section id="Eval" class="slide"><h2>Evaluation</h2>
+      <section id="Eval" class="slide"><h1>Evaluation</h1>
       </section>
       <section id="EvalTischSpur" class="slide"><h2>Evaluation</h2><img src="images/tisch-spuren.png">
       </section>
@@ -298,7 +297,8 @@
     <script src="extensions/status/deck.status.js"></script>
     <script src="extensions/navigation/deck.navigation.js"></script>
     <script src="extensions/presenterview/deck.presenterview.js"></script>
-    <!--script(src="extensions/scale/deck.scale.js")-->
+    <script src="extensions/scale/deck.scale.js"></script>
+    <script src="extensions/fit/deck.fit.js"></script>
     <!-- Initialize the deck.-->
     <script>
       $(function () {
@@ -327,7 +327,11 @@
             indentUnit: 2,
             indentWithTabs: false,
             runnable: false
-          }
+          },
+          designWidth: 1024,
+          designHeight: 768,
+          fitMarginX: 0,
+          fitMarginY: 0
         });
         
         function fillNodeByClass(cname, nodeid) {
@@ -357,10 +361,14 @@
         fillings.forEach(function(f) {
           fillNodeByClass(f[0], f[1]);
         });
-        //$.deck('enableScale');
+        $.deck('enableScale');
+        function zeroPad(n) {
+          n = "" + n;
+          return n.length < 2 ? "0" + n : n;
+        };
         setInterval(function() {
           var d = new Date();
-          var ds = d.getDate() + "." + d.getMonth() + "." + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+          var ds = d.getDate() + "." + d.getMonth() + "." + d.getFullYear() + " " + zeroPad(d.getHours()) + ":" + zeroPad(d.getMinutes()) + ":" + zeroPad(d.getSeconds());
           $("#clock").text(ds);
         }, 1000);
       });

@@ -28,7 +28,8 @@ html.no-js(lang='en')
     link(rel="stylesheet", href="extensions/navigation/deck.navigation.css")
     link(rel="stylesheet", href="extensions/status/deck.status.css")
     link(rel="stylesheet", href="extensions/hash/deck.hash.css")
-    //link(rel="stylesheet", href="extensions/scale/deck.scale.css")
+    link(rel="stylesheet", href="extensions/fit/deck.fit.css")
+    link(rel="stylesheet", href="extensions/scale/deck.scale.css")
 
     // Style theme. More available in /themes/style/ or create your own.
     //- link(rel="stylesheet", href="themes/style/swiss.css")
@@ -102,7 +103,8 @@ html.no-js(lang='en')
     script(src="extensions/status/deck.status.js")
     script(src="extensions/navigation/deck.navigation.js")
     script(src="extensions/presenterview/deck.presenterview.js")
-    //script(src="extensions/scale/deck.scale.js")
+    script(src="extensions/scale/deck.scale.js")
+    script(src="extensions/fit/deck.fit.js")
 
     // Initialize the deck.
     script .
@@ -132,7 +134,11 @@ html.no-js(lang='en')
             indentUnit: 2,
             indentWithTabs: false,
             runnable: false
-          }
+          },
+          designWidth: 1024,
+          designHeight: 768,
+          fitMarginX: 0,
+          fitMarginY: 0
         });
 
         function fillNodeByClass(cname, nodeid) {
@@ -162,10 +168,14 @@ html.no-js(lang='en')
         fillings.forEach(function(f) {
           fillNodeByClass(f[0], f[1]);
         });
-        //$.deck('enableScale');
+        $.deck('enableScale');
+        function zeroPad(n) {
+          n = "" + n;
+          return n.length < 2 ? "0" + n : n;
+        };
         setInterval(function() {
           var d = new Date();
-          var ds = d.getDate() + "." + d.getMonth() + "." + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+          var ds = d.getDate() + "." + d.getMonth() + "." + d.getFullYear() + " " + zeroPad(d.getHours()) + ":" + zeroPad(d.getMinutes()) + ":" + zeroPad(d.getSeconds());
           $("#clock").text(ds);
         }, 1000);
       });

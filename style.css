@@ -53,13 +53,5 @@
 section {
     width: 1024px !important;
     height: 768px;
-}
-
-.csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide {
-    left: 50% !important;
-    -webkit-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
+    overflow: hidden;
 }

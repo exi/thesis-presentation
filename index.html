@@ -67,7 +67,7 @@
                 <li style="list-style-type: none;">"Welche Objekte sehe ich?"</li>
               </ul>
             </li>
-            <li class="slide">Szenenerkennung liefert<img src="images/motivation3.png" class="motiv-img">
+            <li class="slide">Szenenerkennung liefert zusätzlich<img src="images/motivation3.png" class="motiv-img">
               <ul>
                 <li style="list-style-type: none;">"Welche Beziehung haben die Objekte zueinander?"</li>
               </ul>
@@ -111,65 +111,48 @@
 
 <h4>Implicit Shape Model nach Leibe</h4><small>"Combined Object Categorization and Segmentation With An Implicit Shape Model"</small><img src="images/leibe-car.jpg" width="100%">
       </section>
-      <section id="Vertausch" class="slide"><h2>Konzept</h2>
-
-<h4>Vertauschungsproblem</h4>
+      <section id="Vertausch" class="slide"><h2>Konzept - Vertauschungsproblem</h2>
         <object type="image/svg+xml" data="images/vertauschungsproblem.svg" class="perf-diag"></object>
       </section>
       <section id="Train" class="slide"><h2>Konzept</h2>
 
 <h1>Training</h1>
       </section>
-      <section id="Beobacht" class="slide"><h2>Konzept</h2>
+      <section id="Beobacht" class="slide"><h2>Konzept - Training</h2>
 
-<h4>Training</h4>
-        <ul>
-          <li style="list-style-type: none;">Snapshots der erkannten Objekte</li>
-        </ul>
+<h4>Snapshots der erkannten Objekte</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/beobachtung.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg beob-svg"></object>
         </div>
       </section>
-      <section id="Spur" class="slide"><h2>Konzept</h2>
+      <section id="Spur" class="slide"><h2>Konzept - Training</h2>
 
-<h4>Training</h4>
-        <ul>
-          <li style="list-style-type: none;">Extraktion der Objektbewegungen</li>
-        </ul>
+<h4>Extraktion der Objektbewegungen</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/spuren.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg spur-svg"></object>
         </div>
       </section>
-      <section id="Subs" class="slide"><h2>Konzept</h2>
+      <section id="Subs" class="slide"><h2>Konzept - Training</h2>
 
-<h4>Training</h4>
-        <ul>
-          <li style="list-style-type: none;">Anwendung der Clusterheuristiken</li>
-        </ul>
+<h4>Anwendung der Clusterheuristiken</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/unterszene.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg sub-svg"></object>
         </div>
       </section>
-      <section id="Ref" class="slide"><h2>Konzept</h2>
+      <section id="Ref" class="slide"><h2>Konzept - Training</h2>
 
-<h4>Training</h4>
-        <ul>
-          <li style="list-style-type: none;">Bestimmung des Referenzobjektes</li>
-        </ul>
+<h4>Bestimmung des Referenzobjektes</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/referenzwahl.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg ref-svg"></object>
         </div>
       </section>
-      <section id="ISM" class="slide"><h2>Konzept</h2>
+      <section id="ISM" class="slide"><h2>Konzept - Training</h2>
 
-<h4>Training</h4>
-        <ul>
-          <li style="list-style-type: none;">Aufbau des Implicit-Shape-Models</li>
-        </ul>
+<h4>Aufbau des Implicit-Shape-Models</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/ism.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/training.svg" class="right-svg ism-svg"></object>
@@ -179,56 +162,41 @@
 
 <h1>Erkennung</h1>
       </section>
-      <section id="RecoBeob" class="slide"><h2>Konzept</h2>
+      <section id="RecoBeob" class="slide"><h2>Konzept - Erkennung</h2>
 
-<h4>Erkennung</h4>
-        <ul>
-          <li style="list-style-type: none;">Erkannte Objekte als Eingabe</li>
-        </ul>
+<h4>Erkannte Objekte als Eingabe</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-beob.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-beob-svg"></object>
         </div>
       </section>
-      <section id="RecoVote" class="slide"><h2>Konzept</h2>
+      <section id="RecoVote" class="slide"><h2>Konzept - Erkennung</h2>
 
-<h4>Erkennung</h4>
-        <ul>
-          <li style="list-style-type: none;">Berechnung der Votes relativ zu jedem Objekt</li>
-        </ul>
+<h4>Berechnung der Votes relativ zu jedem Objekt</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-vote.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-vote-svg"></object>
         </div>
       </section>
-      <section id="RecoAgg" class="slide"><h2>Konzept</h2>
+      <section id="RecoAgg" class="slide"><h2>Konzept - Erkennung</h2>
 
-<h4>Erkennung</h4>
-        <ul>
-          <li style="list-style-type: none;">Aggregation der Votes in Buckets</li>
-        </ul>
+<h4>Aggregation der Votes in Buckets</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-agg.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-agg-svg"></object>
         </div>
       </section>
-      <section id="RecoRueck" class="slide"><h2>Konzept</h2>
+      <section id="RecoRueck" class="slide"><h2>Konzept - Erkennung</h2>
 
-<h4>Erkennung</h4>
-        <ul>
-          <li style="list-style-type: none;">Rückprojektion zur Positionsverifikation</li>
-        </ul>
+<h4>Rückprojektion zur Positionsverifikation</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-rueck.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-rueck-svg"></object>
         </div>
       </section>
-      <section id="RecoFin" class="slide"><h2>Konzept</h2>
+      <section id="RecoFin" class="slide"><h2>Konzept - Erkennung</h2>
 
-<h4>Erkennung - Ergebnis</h4>
-        <ul>
-          <li style="list-style-type: none;">Einfügen der Unterszene als Pseudoobjekt, Wiederholung</li>
-        </ul>
+<h4>Einfügen der Unterszene als Pseudoobjekt, Wiederholung</h4>
         <div class="col2">
           <object type="image/svg+xml" data="images/erkennung-finished.svg" class="left-svg"></object>
           <object type="image/svg+xml" data="images/erkennung.svg" class="right-svg e-rueck-svg"></object>
@@ -296,7 +264,7 @@
     <script src="extensions/goto/deck.goto.js"></script>
     <script src="extensions/status/deck.status.js"></script>
     <script src="extensions/navigation/deck.navigation.js"></script>
-    <script src="extensions/presenterview/deck.presenterview.js"></script>
+    <!-- script(src="extensions/presenterview/deck.presenterview.js")-->
     <script src="extensions/scale/deck.scale.js"></script>
     <script src="extensions/fit/deck.fit.js"></script>
     <!-- Initialize the deck.-->
@@ -366,11 +334,13 @@
           n = "" + n;
           return n.length < 2 ? "0" + n : n;
         };
-        setInterval(function() {
+        function clockupdate() {
           var d = new Date();
-          var ds = d.getDate() + "." + d.getMonth() + "." + d.getFullYear() + " " + zeroPad(d.getHours()) + ":" + zeroPad(d.getMinutes()) + ":" + zeroPad(d.getSeconds());
+          var ds = zeroPad(d.getDate()) + "." + zeroPad(d.getMonth()) + "." + d.getFullYear() + " " + zeroPad(d.getHours()) + ":" + zeroPad(d.getMinutes()) + ":" + zeroPad(d.getSeconds());
           $("#clock").text(ds);
-        }, 1000);
+        };
+        clockupdate();
+        setInterval(clockupdate, 1000);
       });
     </script>
   </body>

@@ -21,7 +21,7 @@ block slides
           img.motiv-img(src="images/motivation2.png")
           ul
             li(style="list-style-type: none;") "Welche Objekte sehe ich?"
-        li.slide Szenenerkennung liefert
+        li.slide Szenenerkennung liefert zusätzlich
           img.motiv-img(src="images/motivation3.png")
           ul
             li(style="list-style-type: none;") "Welche Beziehung haben die Objekte zueinander?"
@@ -61,8 +61,7 @@ block slides
 
   section.slide#Vertausch
     :markdown
-      ## Konzept
-      #### Vertauschungsproblem
+      ## Konzept - Vertauschungsproblem
     object.perf-diag(type="image/svg+xml", data="images/vertauschungsproblem.svg")
 
   section.slide#Train
@@ -72,50 +71,40 @@ block slides
 
   section.slide#Beobacht
     :markdown
-      ## Konzept
-      #### Training
-    ul
-      li(style="list-style-type: none;") Snapshots der erkannten Objekte
+      ## Konzept - Training
+      #### Snapshots der erkannten Objekte
     div.col2
       object.left-svg(type="image/svg+xml", data="images/beobachtung.svg")
       object.right-svg.beob-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#Spur
     :markdown
-      ## Konzept
-      #### Training
-    ul
-      li(style="list-style-type: none;") Extraktion der Objektbewegungen
+      ## Konzept - Training
+      #### Extraktion der Objektbewegungen
     div.col2
       object.left-svg(type="image/svg+xml", data="images/spuren.svg")
       object.right-svg.spur-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#Subs
     :markdown
-      ## Konzept
-      #### Training
-    ul
-      li(style="list-style-type: none;") Anwendung der Clusterheuristiken
+      ## Konzept - Training
+      #### Anwendung der Clusterheuristiken
     div.col2
       object.left-svg(type="image/svg+xml", data="images/unterszene.svg")
       object.right-svg.sub-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#Ref
     :markdown
-      ## Konzept
-      #### Training
-    ul
-      li(style="list-style-type: none;") Bestimmung des Referenzobjektes
+      ## Konzept - Training
+      #### Bestimmung des Referenzobjektes
     div.col2
       object.left-svg(type="image/svg+xml", data="images/referenzwahl.svg")
       object.right-svg.ref-svg(type="image/svg+xml", data="images/training.svg")
 
   section.slide#ISM
     :markdown
-      ## Konzept
-      #### Training
-    ul
-      li(style="list-style-type: none;") Aufbau des Implicit-Shape-Models
+      ## Konzept - Training
+      #### Aufbau des Implicit-Shape-Models
     div.col2
       object.left-svg(type="image/svg+xml", data="images/ism.svg")
       object.right-svg.ism-svg(type="image/svg+xml", data="images/training.svg")
@@ -127,50 +116,40 @@ block slides
 
   section.slide#RecoBeob
     :markdown
-      ## Konzept
-      #### Erkennung
-    ul
-      li(style="list-style-type: none;") Erkannte Objekte als Eingabe
+      ## Konzept - Erkennung
+      #### Erkannte Objekte als Eingabe
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-beob.svg")
       object.right-svg.e-beob-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#RecoVote
     :markdown
-      ## Konzept
-      #### Erkennung
-    ul
-      li(style="list-style-type: none;") Berechnung der Votes relativ zu jedem Objekt
+      ## Konzept - Erkennung
+      #### Berechnung der Votes relativ zu jedem Objekt
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-vote.svg")
       object.right-svg.e-vote-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#RecoAgg
     :markdown
-      ## Konzept
-      #### Erkennung
-    ul
-      li(style="list-style-type: none;") Aggregation der Votes in Buckets
+      ## Konzept - Erkennung
+      #### Aggregation der Votes in Buckets
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-agg.svg")
       object.right-svg.e-agg-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#RecoRueck
     :markdown
-      ## Konzept
-      #### Erkennung
-    ul
-      li(style="list-style-type: none;") Rückprojektion zur Positionsverifikation
+      ## Konzept - Erkennung
+      #### Rückprojektion zur Positionsverifikation
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-rueck.svg")
       object.right-svg.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg")
 
   section.slide#RecoFin
     :markdown
-      ## Konzept
-      #### Erkennung - Ergebnis
-    ul
-      li(style="list-style-type: none;") Einfügen der Unterszene als Pseudoobjekt, Wiederholung
+      ## Konzept - Erkennung
+      #### Einfügen der Unterszene als Pseudoobjekt, Wiederholung
     div.col2
       object.left-svg(type="image/svg+xml", data="images/erkennung-finished.svg")
       object.right-svg.e-rueck-svg(type="image/svg+xml", data="images/erkennung.svg")

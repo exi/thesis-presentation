@@ -102,7 +102,7 @@ html.no-js(lang='en')
     script(src="extensions/goto/deck.goto.js")
     script(src="extensions/status/deck.status.js")
     script(src="extensions/navigation/deck.navigation.js")
-    script(src="extensions/presenterview/deck.presenterview.js")
+    // script(src="extensions/presenterview/deck.presenterview.js")
     script(src="extensions/scale/deck.scale.js")
     script(src="extensions/fit/deck.fit.js")
 
@@ -173,9 +173,11 @@ html.no-js(lang='en')
           n = "" + n;
           return n.length < 2 ? "0" + n : n;
         };
-        setInterval(function() {
+        function clockupdate() {
           var d = new Date();
-          var ds = d.getDate() + "." + d.getMonth() + "." + d.getFullYear() + " " + zeroPad(d.getHours()) + ":" + zeroPad(d.getMinutes()) + ":" + zeroPad(d.getSeconds());
+          var ds = zeroPad(d.getDate()) + "." + zeroPad(d.getMonth()) + "." + d.getFullYear() + " " + zeroPad(d.getHours()) + ":" + zeroPad(d.getMinutes()) + ":" + zeroPad(d.getSeconds());
           $("#clock").text(ds);
-        }, 1000);
+        };
+        clockupdate();
+        setInterval(clockupdate, 1000);
       });
